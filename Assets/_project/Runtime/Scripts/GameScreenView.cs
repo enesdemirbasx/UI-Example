@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using _Project.Runtime.Core.Singleton;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
-public class GameScreenView : MonoBehaviour
+public class GameScreenView : SingletonBehaviour<GameScreenView>
 {
     public CanvasGroup CanvasGroupTop;
     public CanvasGroup CanvasGroupBottom;
@@ -19,7 +21,15 @@ public class GameScreenView : MonoBehaviour
     public GameObject Bottom;
     public GameObject Left;
     public GameObject Right;
+    
+    public bool IsMissionComplated=false;
 
+
+    private void Awake()
+    {
+        
+        
+    }
 
     public async void OnClickInventory()
     {
@@ -35,6 +45,14 @@ public class GameScreenView : MonoBehaviour
         Right.transform.DOMoveX(40, .3f).SetRelative(true);
 
         StartCoroutine(ScreenChange());
+    }
+
+    private void Start()
+    {
+        if (IsMissionComplated)
+        {
+            Debug.Log("Enes");
+        }
     }
 
     public async void change()
