@@ -21,15 +21,8 @@ public class GameScreenView : SingletonBehaviour<GameScreenView>
     public GameObject Bottom;
     public GameObject Left;
     public GameObject Right;
-    
-    public bool IsMissionComplated=false;
 
-
-    private void Awake()
-    {
-        
-        
-    }
+    public bool IsMissionComplated = false;
 
     public async void OnClickInventory()
     {
@@ -58,10 +51,10 @@ public class GameScreenView : SingletonBehaviour<GameScreenView>
     public async void change()
     {
         ScreenManager.Instance.ClearLayer(ScreenLayers.Layer1);
-        await ScreenManager.Instance.OpenScreen(ScreenKeys.InventoryScreen, ScreenLayers.Layer1);   
+        await ScreenManager.Instance.OpenScreen(ScreenKeys.InventoryScreen, ScreenLayers.Layer1);
     }
 
-    private  IEnumerator ScreenChange()
+    private IEnumerator ScreenChange()
     {
         yield return new WaitForSeconds(.3f);
         change();
