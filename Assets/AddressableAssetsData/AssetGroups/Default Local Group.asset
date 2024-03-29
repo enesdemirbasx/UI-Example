@@ -17,8 +17,18 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 83975189619f3464aae15a2c0ba19459
   m_SerializeEntries:
-  - m_GUID: 7f6f2502635d03b458f0cf96a2c359a4
-    m_Address: Inventory
+  - m_GUID: 00e06022e0e35d44e923253146dd44d0
+    m_Address: MenuScreena
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4994414f403494841a40040f19b3e042
+    m_Address: MenuScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2af6b3f9fd8243a6b26d0b0d98f966e
+    m_Address: InventoryScreen
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

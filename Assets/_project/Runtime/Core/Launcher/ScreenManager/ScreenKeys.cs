@@ -5,4 +5,6 @@ using UnityEngine;
 public class ScreenKeys
 {
     public const string MenuScreen = "MenuScreen"; 
+    public const string InventoryScreen = "InventoryScreen"; 
+
 }
