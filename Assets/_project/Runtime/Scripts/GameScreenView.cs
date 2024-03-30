@@ -23,7 +23,7 @@ public class GameScreenView : SingletonBehaviour<GameScreenView>
     public GameObject Right;
 
     public bool IsMissionComplated = false;
-
+   
     public async void OnClickInventory()
     {
         DOTween.To(() => CanvasGroupTop.alpha, x => CanvasGroupTop.alpha = x, 0, .3f);
@@ -41,9 +41,27 @@ public class GameScreenView : SingletonBehaviour<GameScreenView>
     }
 
     private void Start()
-    {
+    { ;
         if (IsMissionComplated)
         {
+            // CanvasGroupTop.alpha = 0;
+            // CanvasGroupBottom.alpha=0;
+            // CanvasGroupMiddle.alpha = 0;
+            // CanvasGroupLeft.alpha = 0;
+            // CanvasGroupRight.alpha = 0;
+            // Top.transform.DOMoveY(40, 0).SetRelative(true);
+            // Bottom.transform.DOMoveY(-40, 0).SetRelative(true);
+            // Left.transform.DOMoveX(-40, 0).SetRelative(true);
+            // Right.transform.DOMoveX(40, 0).SetRelative(true);
+            // Top.transform.DOMoveY(-40, .3f).SetRelative(true);
+            // Bottom.transform.DOMoveY(40, .3f).SetRelative(true);
+            // Left.transform.DOMoveX(40, .3f).SetRelative(true);
+            // Right.transform.DOMoveX(-40, .3f).SetRelative(true);
+            // DOTween.To(() => CanvasGroupTop.alpha, x => CanvasGroupTop.alpha = x, 1, .3f);
+            // DOTween.To(() => CanvasGroupBottom.alpha, x => CanvasGroupBottom.alpha = x, 1, .3f);
+            // DOTween.To(() => CanvasGroupLeft.alpha, x => CanvasGroupLeft.alpha = x, 1, .3f);
+            // DOTween.To(() => CanvasGroupRight.alpha, x => CanvasGroupRight.alpha = x, 1, .3f);
+            // DOTween.To(() => CanvasGroupMiddle.alpha, x => CanvasGroupMiddle.alpha = x, 1, .3f);
             Debug.Log("Enes");
         }
     }

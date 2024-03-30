@@ -1397,6 +1397,7 @@ MonoBehaviour:
   EmberPotionSprite: {fileID: 21300000, guid: 1ea1c132fb7d74ed3aba8c1eb2e1032e, type: 3}
   EmberSprite: {fileID: 21300000, guid: 93273d14e65fd49e7b608dfd77b2ac6e, type: 3}
   ButtonSprite: {fileID: 21300000, guid: 3a0821db332ce43448bcef07cee30204, type: 3}
+  GrayButtonSprite: {fileID: 21300000, guid: 8df94fa1d637349678aac55d33adcb98, type: 3}
   Title: {fileID: 2648826336409718112}
   Comment: {fileID: 8067295603632870272}
   LastText: {fileID: 8800208399516064827}

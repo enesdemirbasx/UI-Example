@@ -24,11 +24,11 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
     public Sprite EmberPotionSprite;
     public Sprite EmberSprite;
     public Sprite ButtonSprite;
+    public Sprite GrayButtonSprite;
 
     public TextMeshProUGUI Title;
     public TextMeshProUGUI Comment;
     public TextMeshProUGUI LastText;
-
 
     public Image Potion;
     public Image BigSlot;
@@ -42,9 +42,7 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
     public Image Ember3;
     public Image FillSquare;
     public Image DoubleSquare;
-
-    public float delay = 0.02f;
-
+    
     private void Awake()
     {
         DoubleSquare.enabled = false;
@@ -111,7 +109,7 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
         Title.text = "Big Ember Potion";
         LastText.text = "";
         Comment.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-        StartCoroutine(AnimateText());
+        StartCoroutine(AnimateText(Comment,0.02f));
     }
 
 
@@ -127,13 +125,13 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
         }
     }
 
-    IEnumerator AnimateText()
+    IEnumerator AnimateText(TextMeshProUGUI Text,float delay)
     {
-        Comment.ForceMeshUpdate();
-        int totalVisibleCharacters = Comment.textInfo.characterCount;
+        Text.ForceMeshUpdate();
+        int totalVisibleCharacters = Text.textInfo.characterCount;
         int visibleCount = 0;
         int counter = 0;
-        while (counter < totalVisibleCharacters)
+        while (counter <= totalVisibleCharacters)
         {
             int visibleCountOld = visibleCount;
 
@@ -141,9 +139,8 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
 
             if (visibleCount != visibleCountOld)
             {
-                Comment.maxVisibleCharacters = visibleCount;
+                Text.maxVisibleCharacters = visibleCount;
             }
-
             counter++;
             yield return new WaitForSeconds(delay);
         }
@@ -157,6 +154,7 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
 
     IEnumerator Fill()
     {
+        TextMeshProUGUI GetText = CraftButton.GetComponentInChildren<TextMeshProUGUI>();
         bool isFill = true;
         while (isFill)
         {
@@ -164,7 +162,6 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
             yield return new WaitForSeconds(.02f);
             if (FillSquare.fillAmount == 1f)
             {
-                isFill = false;
                 DoubleSquare.enabled = true;
                 FillSquare.enabled = false;
                 DoubleSquare.transform.DOScale(1.4f, .5f);
@@ -176,6 +173,13 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
                 Ember1.color = new Color(0.6863f, 0.6863f, 0.6863f);
                 Ember2.color = new Color(0.6863f, 0.6863f, 0.6863f);
                 Ember3.color = new Color(0.6863f, 0.6863f, 0.6863f);
+                CraftButton.GetComponent<Image>().sprite = GrayButtonSprite;
+                GetText.text = "in Crafting";
+                StartCoroutine(AnimateText(GetText,0.04f));
+                yield return new WaitForSeconds(1f);
+                GetText.text = "Craft";
+                StartCoroutine(AnimateText(GetText,0.04f));
+                isFill = false;
             }
         }
     }
