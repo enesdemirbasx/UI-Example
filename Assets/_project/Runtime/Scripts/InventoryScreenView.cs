@@ -156,6 +156,9 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
     {
         TextMeshProUGUI GetText = CraftButton.GetComponentInChildren<TextMeshProUGUI>();
         bool isFill = true;
+        CraftButton.GetComponent<Image>().sprite = GrayButtonSprite;
+        GetText.text = "in Crafting";
+        StartCoroutine(AnimateText(GetText,0.04f));
         while (isFill)
         {
             FillSquare.fillAmount += 0.02f;
@@ -173,10 +176,6 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
                 Ember1.color = new Color(0.6863f, 0.6863f, 0.6863f);
                 Ember2.color = new Color(0.6863f, 0.6863f, 0.6863f);
                 Ember3.color = new Color(0.6863f, 0.6863f, 0.6863f);
-                CraftButton.GetComponent<Image>().sprite = GrayButtonSprite;
-                GetText.text = "in Crafting";
-                StartCoroutine(AnimateText(GetText,0.04f));
-                yield return new WaitForSeconds(1f);
                 GetText.text = "Craft";
                 StartCoroutine(AnimateText(GetText,0.04f));
                 isFill = false;
@@ -190,6 +189,6 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
         screenView.IsMissionComplated = true;
         var screenManager = ScreenManager.Instance;
         ScreenManager.Instance.ClearLayer(ScreenLayers.Layer1);
-        await screenManager.OpenScreen(ScreenKeys.MenuScreen, ScreenLayers.Layer1);
+        await screenManager.OpenScreen(ScreenKeys.MenuScreen2, ScreenLayers.Layer1);
     }
 }
