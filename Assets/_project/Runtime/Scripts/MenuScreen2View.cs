@@ -39,6 +39,8 @@ public class MenuScreen2View : MonoBehaviour
     public TextMeshProUGUI Title;
 
     public Sprite Tick;
+    
+    private byte i=2;
 
     private void Awake()
     {
@@ -85,13 +87,11 @@ public class MenuScreen2View : MonoBehaviour
         StartCoroutine(QuestComp(ComplateImage, QuestIco, Particle1, .5f));
     }
 
-    private void Start()
-    {
-    }
 
     private IEnumerator QuestComp(Image Green, Image Ico, Image Particle, float delay)
     {
         yield return new WaitForSeconds(delay);
+        Left.GetComponentInChildren<Image>().GetComponentInChildren<TextMeshProUGUI>().text="Quests("+i+"/3)";
         Green.DOFade(1, .5f);
         Green.transform.DOScaleX(1f, .5f);
         Green.transform.DOScaleY(1f, .5f);
@@ -102,6 +102,7 @@ public class MenuScreen2View : MonoBehaviour
         Ico.transform.DOMoveX(-40, 0).SetRelative(true);
         Ico.sprite = Tick;
         Ico.transform.DOMoveX(40, 0.5f).SetRelative(true);
+        i++;
     }
 
     public async void OnClickPotion()
