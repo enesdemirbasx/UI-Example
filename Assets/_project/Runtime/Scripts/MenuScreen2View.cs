@@ -112,6 +112,22 @@ public class MenuScreen2View : MonoBehaviour
         StartCoroutine(PotionClickAnimation());
     }
 
+    public void OnClickClaim()
+    {
+        DOTween.To(() => QuestComplatedBG.GetComponent<CanvasGroup>().alpha, x => QuestComplatedBG.GetComponent<CanvasGroup>().alpha = x, 0, .6f);
+        BlurBG.DOFade(0, .6f);
+        Top.transform.DOMoveY(-40, .5f).SetRelative(true);
+        Bottom.transform.DOMoveY(40, .5f).SetRelative(true);
+        Left.transform.DOMoveX(40, .5f).SetRelative(true);
+        Right.transform.DOMoveX(-40, .5f).SetRelative(true);
+        DOTween.To(() => CanvasGroupTop.alpha, x => CanvasGroupTop.alpha = x, 1, .5f);
+        DOTween.To(() => CanvasGroupBottom.alpha, x => CanvasGroupBottom.alpha = x, 1, .5f);
+        DOTween.To(() => CanvasGroupLeft.alpha, x => CanvasGroupLeft.alpha = x, 1, .5f);
+        DOTween.To(() => CanvasGroupRight.alpha, x => CanvasGroupRight.alpha = x, 1, .5f);
+        DOTween.To(() => CanvasGroupMiddle.alpha, x => CanvasGroupMiddle.alpha = x, 1, .5f);
+
+    }
+
     IEnumerator PotionClickAnimation()
     {
         yield return new WaitForSeconds(0.5f);
