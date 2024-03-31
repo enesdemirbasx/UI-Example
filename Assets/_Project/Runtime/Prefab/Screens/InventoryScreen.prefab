@@ -1413,7 +1413,6 @@ MonoBehaviour:
   Ember3: {fileID: 2308091141076793112}
   FillSquare: {fileID: 5749909691648114141}
   DoubleSquare: {fileID: 653322447567198822}
-  delay: 0.02
 --- !u!1 &2913034653690797433
 GameObject:
   m_ObjectHideFlags: 0
@@ -8009,7 +8008,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8309812772819051731, guid: 47b434c05694a45849b334e3ee775c42, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8632723235747948736, guid: 47b434c05694a45849b334e3ee775c42,
         type: 3}

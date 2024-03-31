@@ -93,15 +93,15 @@ public class InventoryScreenView : SingletonBehaviour<InventoryScreenView>
         Ember1.sprite = EmberSprite;
         Ember2.sprite = EmberSprite;
         Ember3.sprite = EmberSprite;
-        Ember1.transform.DOMoveY(40, 0).SetRelative(true);
-        Ember1.DOFade(1, .3f);
-        Ember1.transform.DOMoveY(-40, .3f).SetRelative(true);
-        Ember2.transform.DOMoveY(40, 0).SetRelative(true);
-        Ember2.DOFade(1, .3f);
-        Ember2.transform.DOMoveY(-40, .3f).SetRelative(true);
-        Ember3.transform.DOMoveY(40, 0).SetRelative(true);
-        Ember3.DOFade(1, .3f);
-        Ember3.transform.DOMoveY(-40, .3f).SetRelative(true);
+        Ember1.transform.DOMoveY(40, 0).SetRelative(true).SetEase(Ease.OutCirc);
+        Ember1.DOFade(1, .3f).SetEase(Ease.OutCirc);
+        Ember1.transform.DOMoveY(-40, .3f).SetRelative(true).SetEase(Ease.OutCirc);
+        Ember2.transform.DOMoveY(40, 0).SetRelative(true).SetEase(Ease.OutCirc);
+        Ember2.DOFade(1, .3f).SetEase(Ease.OutCirc);
+        Ember2.transform.DOMoveY(-40, .3f).SetRelative(true).SetEase(Ease.OutCirc);
+        Ember3.transform.DOMoveY(40, 0).SetRelative(true).SetEase(Ease.OutCirc);
+        Ember3.DOFade(1, .3f).SetEase(Ease.OutCirc);
+        Ember3.transform.DOMoveY(-40, .3f).SetRelative(true).SetEase(Ease.OutCirc);
 
         CraftButton.GetComponent<Image>().sprite = ButtonSprite;
         SelectedIco.transform.DOScaleX(.85f, 1f);
